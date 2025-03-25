@@ -38,10 +38,10 @@ def check_password():
             specialChar = True
     
     if capitalCount < 2:
-        return flask.jsonify({"valid": False, "reason": "Password must contain at least 2 capital letters"}), 400
+        return flask.jsonify({"valid": False, "reason": "Password must contain at least 2 capital letters"}), 200
     elif numCount < 2:
-        return flask.jsonify({"valid": False, "reason": "Password must contain at least 2 digits"}), 400
+        return flask.jsonify({"valid": False, "reason": "Password must contain at least 2 digits"}), 200
     elif not specialChar:
-        return flask.jsonify({"valid": False, "reason": "Password must contain at least 1 special character"}), 400
+        return flask.jsonify({"valid": False, "reason": "Password must contain at least 1 special character"}), 200
     
     return flask.jsonify({"valid": True, "reason": "Password is valid"}), 200
